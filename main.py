@@ -32,29 +32,29 @@ fraud_data = df.loc[df.fraud == 1]
 nonfraud_data = df.loc[df.fraud == 0]
 
 # Visualize comparison of normal and fraudulent payments 
-# sns.countplot(x="fraud", data=df)
-# plt.title("Count of Fraudulent Payments")
-# plt.show()
-# print("Number of normal examples: ",nonfraud_data.fraud.count())
-# print("Number of fradulent examples: ",fraud_data.fraud.count())
+sns.countplot(x="fraud", data=df)
+plt.title("Count of Fraudulent Payments")
+plt.show()
+print("Number of normal examples: ",nonfraud_data.fraud.count())
+print("Number of fradulent examples: ",fraud_data.fraud.count())
 
 # Explore mean and fraud percentage grouped by category
-# print("Mean category grouped by category: \n", df.groupby("category")["amount", "fraud"].mean())
-# grouped_fraud = fraud_data.groupby("category")["amount"]
-# grouped_nonfraud = nonfraud_data.groupby("category")["amount"]
-# category_compare_data = pd.concat([grouped_fraud.mean(), grouped_nonfraud.mean(), df.groupby("category")["fraud"].mean()*100], keys=["Fraudulent",
-# "Non-Fraudulent", "Percentage (in %)"], axis=1, sort=False).sort_values(by=["Fraudulent"])
-# print(category_compare_data)
+print("Mean category grouped by category: \n", df.groupby("category")["amount", "fraud"].mean())
+grouped_fraud = fraud_data.groupby("category")["amount"]
+grouped_nonfraud = nonfraud_data.groupby("category")["amount"]
+category_compare_data = pd.concat([grouped_fraud.mean(), grouped_nonfraud.mean(), df.groupby("category")["fraud"].mean()*100], keys=["Fraudulent",
+"Non-Fraudulent", "Percentage (in %)"], axis=1, sort=False).sort_values(by=["Fraudulent"])
+print(category_compare_data)
 
 # Visualize fraud and non-fraud data using boxplot
-# plt.figure(figsize=(40,10))
-# sns.boxplot(x=df.category,y=df.amount)
-# plt.title("Boxplot for the Amount spend in category")
-# plt.ylim(0,4000)
-# plt.xticks(rotation=45, ha='right', fontsize=8)
-# plt.legend()
-# plt.show()
-# print("Insights: Average amount spent per category is similar, except for the amount of fraud for the travel category which spikes drastically.")
+plt.figure(figsize=(40,10))
+sns.boxplot(x=df.category,y=df.amount)
+plt.title("Boxplot for the Amount spend in category")
+plt.ylim(0,4000)
+plt.xticks(rotation=45, ha='right', fontsize=8)
+plt.legend()
+plt.show()
+print("Insights: Average amount spent per category is similar, except for the amount of fraud for the travel category which spikes drastically.")
 
 # Visualize amounts of fraud and non-fraud using histogram
 plt.hist(fraud_data.amount, alpha=0.5, label='Fraud',bins=100)
