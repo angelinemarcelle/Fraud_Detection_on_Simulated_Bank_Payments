@@ -1,7 +1,7 @@
 # Fraud Detection with Machine Learning
 This repository contains code for fraud detection using machine learning algorithms. The code demonstrates various steps involved in the fraud detection process, including data preprocessing, exploratory data analysis, feature engineering, model training, and evaluation.
 
-###Dataset
+### Dataset
 The dataset used for fraud detection is named "banksim_data.csv". It contains information about various transactions, including customer details, merchant details, transaction amounts, categories, and a fraud label indicating whether the transaction is fraudulent or not.
 
 The dataset can be accessed from the following URL: [banksim_data.csv](https://shorturl.at/yAIMW) - Google Drive
